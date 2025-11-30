@@ -182,7 +182,6 @@ class _GameScreenState extends State<GameScreen> {
   }
 
   void _checkWinner() {
-    // 1st row
     if (displayXO[0] == displayXO[1] &&
         displayXO[0] == displayXO[2] &&
         displayXO[0] != '') {
@@ -194,7 +193,6 @@ class _GameScreenState extends State<GameScreen> {
       });
     }
 
-    // 2nd row
     if (displayXO[3] == displayXO[4] &&
         displayXO[3] == displayXO[5] &&
         displayXO[3] != '') {
@@ -206,7 +204,6 @@ class _GameScreenState extends State<GameScreen> {
       });
     }
 
-    // 3rd row
     if (displayXO[6] == displayXO[7] &&
         displayXO[6] == displayXO[8] &&
         displayXO[6] != '') {
@@ -218,7 +215,6 @@ class _GameScreenState extends State<GameScreen> {
       });
     }
 
-    // 1st column
     if (displayXO[0] == displayXO[3] &&
         displayXO[0] == displayXO[6] &&
         displayXO[0] != '') {
@@ -230,7 +226,6 @@ class _GameScreenState extends State<GameScreen> {
       });
     }
 
-    // 2nd column
     if (displayXO[1] == displayXO[4] &&
         displayXO[1] == displayXO[7] &&
         displayXO[1] != '') {
@@ -242,7 +237,6 @@ class _GameScreenState extends State<GameScreen> {
       });
     }
 
-    // 3rd column
     if (displayXO[2] == displayXO[5] &&
         displayXO[2] == displayXO[8] &&
         displayXO[2] != '') {
@@ -254,7 +248,6 @@ class _GameScreenState extends State<GameScreen> {
       });
     }
 
-    // Diagonal
     if (displayXO[0] == displayXO[4] &&
         displayXO[0] == displayXO[8] &&
         displayXO[0] != '') {
@@ -266,7 +259,6 @@ class _GameScreenState extends State<GameScreen> {
       });
     }
 
-    // Diagonal
     if (displayXO[6] == displayXO[4] &&
         displayXO[6] == displayXO[2] &&
         displayXO[6] != '') {
@@ -277,9 +269,11 @@ class _GameScreenState extends State<GameScreen> {
         _updateScore(displayXO[6]);
       });
     }
+
     if (!winnerFound && filledBoxes == 9) {
       setState(() {
         resultDeclaration = 'Nobody Wins!';
+        stopTimer();
       });
     }
   }
